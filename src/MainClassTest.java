@@ -7,7 +7,17 @@ public class MainClassTest extends MainClass{
         if (a==14){
             return "Right is it 14";
         } else {
-            return "Wrong it it not 14";
+            return "Wrong is it not 14";
+        }
+    }
+
+    public String testGetClassNumber()
+    {
+        int b = this.getClassNumber();
+        if (b>45){
+            return "Right is it biggest 45";
+        } else {
+            return "Wrong is it not biggest 45";
         }
     }
 }
