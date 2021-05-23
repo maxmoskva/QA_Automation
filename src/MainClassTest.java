@@ -20,4 +20,18 @@ public class MainClassTest extends MainClass{
             return "Wrong is it not biggest 45";
         }
     }
+
+    public String testGetClassString()
+    {
+        String c = this.getClassString();
+        String sub1 = "Hello";
+        String sub2 = "hello";
+        if (c.contains(sub1)){
+            return "True";
+        } else if (c.contains(sub2)){
+            return "True";
+        } else {
+            return "False";
+        }
+    }
 }
