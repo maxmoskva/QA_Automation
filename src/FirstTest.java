@@ -68,6 +68,17 @@ public class FirstTest {
         assertElementHasText(By.xpath("//*[contains(@text, 'Search…')]"), "Can't find Search...",15);
     }
 
+    @Test
+    public void testEx3(){
+        waitClickBy(By.xpath("//*[contains(@text, 'Search Wikipedia')]"), "Can't find: Search Wikipedia", 5);
+        waitSendBy(By.xpath("//*[contains(@text, 'Search…')]"), "Java", "Can't find: Search", 5);
+        waitForBy(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Island of Indonesia']"), "Can't find: Island of Indonesia", 5);
+        waitForBy(By.xpath("//*[@resource-id='org.wikipedia:id/page_list_item_container']//*[@text='Object-oriented programming language']"), "Can't find: Object-oriented programming language", 5);
+        waitClear(By.id("org.wikipedia:id/search_src_text"),"Can't find text",5);
+        waitClickBy(By.id("org.wikipedia:id/search_close_btn"), "Can't find X", 5);
+        waitNotYet(By.id("org.wikipedia:id/search_close_btn"), "Can't find X", 5);
+    }
+
     private WebElement waitForBy (By by, String err_msg, long timeOut){
         WebDriverWait wait = new WebDriverWait(driver, timeOut);
         wait.withMessage(err_msg + "\n");
